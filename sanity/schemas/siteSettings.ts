@@ -5,7 +5,6 @@ export default defineType({
   name: "siteSettings",
   title: "Site Settings",
   type: "document",
-  __experimental_actions: ["update", "publish"],
   fields: [
     // Hero
     defineField({ name: "heroTagline",  type: "string", title: "Hero Tagline",  group: "hero" }),

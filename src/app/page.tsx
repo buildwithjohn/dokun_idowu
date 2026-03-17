@@ -1,5 +1,3 @@
-// src/app/page.tsx
-import { sanityClient, heroQuery, aboutQuery, sermonsQuery, quotesQuery, familyQuery, mentorshipQuery } from "@/lib/sanity";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import HeroSection from "@/components/sections/HeroSection";
@@ -10,11 +8,19 @@ import MentorshipSection from "@/components/sections/MentorshipSection";
 import FamilySection from "@/components/sections/FamilySection";
 import ContactSection from "@/components/sections/ContactSection";
 
-// Revalidate every 60 seconds (ISR — updates without full rebuild)
+// Revalidate every 60s (ISR)
 export const revalidate = 60;
 
 async function fetchData() {
+  // Only fetch from Sanity if projectId is configured
+  if (!process.env.NEXT_PUBLIC_SANITY_PROJECT_ID) {
+    return { hero: null, about: null, sermons: [], quotes: [], family: [], mentorship: null };
+  }
+
   try {
+    const { sanityClient, heroQuery, aboutQuery, sermonsQuery, quotesQuery, familyQuery, mentorshipQuery } =
+      await import("@/lib/sanity");
+
     const [hero, about, sermons, quotes, family, mentorship] = await Promise.all([
       sanityClient.fetch(heroQuery).catch(() => null),
       sanityClient.fetch(aboutQuery).catch(() => null),
@@ -23,9 +29,9 @@ async function fetchData() {
       sanityClient.fetch(familyQuery).catch(() => []),
       sanityClient.fetch(mentorshipQuery).catch(() => null),
     ]);
+
     return { hero, about, sermons, quotes, family, mentorship };
   } catch {
-    // If Sanity isn't configured yet, return empty data — site still renders with defaults
     return { hero: null, about: null, sermons: [], quotes: [], family: [], mentorship: null };
   }
 }

@@ -1,13 +1,10 @@
-// src/app/studio/[[...tool]]/page.tsx
+"use client";
 /**
  * Sanity Studio embedded at /studio
- * Access at: http://localhost:3000/studio
- * Or in production: https://yourdomain.com/studio
+ * Must be "use client" + force-dynamic to prevent SSR errors
  */
 import { NextStudio } from "next-sanity/studio";
 import config from "../../../../sanity.config";
-
-export const dynamic = "force-static";
 
 export default function StudioPage() {
   return <NextStudio config={config} />;

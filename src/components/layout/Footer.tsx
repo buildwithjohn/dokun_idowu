@@ -1,6 +1,6 @@
 // src/components/layout/Footer.tsx
 "use client";
-import Link from "next/link";
+
 
 const QUICK = ["Home", "About", "Teachings", "Mentorship", "Family", "Contact"];
 const MINISTRY = [

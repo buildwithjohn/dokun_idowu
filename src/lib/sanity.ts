@@ -1,22 +1,23 @@
-// src/lib/sanity.ts
 import { createClient } from "next-sanity";
 import imageUrlBuilder from "@sanity/image-url";
 
+const projectId = process.env.NEXT_PUBLIC_SANITY_PROJECT_ID;
+const dataset   = process.env.NEXT_PUBLIC_SANITY_DATASET || "production";
+
+// Only create a real client when projectId exists (skipped at build time if not set)
 export const sanityClient = createClient({
-  projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID!,
-  dataset:   process.env.NEXT_PUBLIC_SANITY_DATASET || "production",
+  projectId: projectId || "placeholder",
+  dataset,
   apiVersion: "2024-01-01",
   useCdn: process.env.NODE_ENV === "production",
 });
 
 const builder = imageUrlBuilder(sanityClient);
-
 export function urlFor(source: any) {
   return builder.image(source);
 }
 
 // ─── Queries ─────────────────────────────────────────────────────────────────
-
 export const heroQuery = `*[_type == "siteSettings"][0]{
   heroTagline, heroTitle, heroSubtitle, heroCta1, heroCta2,
   heroImage { asset->{ _id, url, metadata { dimensions } } }
