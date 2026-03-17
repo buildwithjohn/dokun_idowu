@@ -28,7 +28,7 @@ function VideoCard({ sermon, onClick }: { sermon: Sermon; onClick: () => void })
     || (sermon.youtubeId ? `https://i.ytimg.com/vi/${sermon.youtubeId}/maxresdefault.jpg` : null);
 
   return (
-    <div onClick={onClick} className="video-card">
+    <div onClick={onClick} className="video-card group">
       {/* Thumbnail */}
       <div className="relative aspect-video bg-espresso overflow-hidden mb-4">
         {thumbUrl ? (
