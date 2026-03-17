@@ -15,12 +15,27 @@ interface Sermon {
 
 // Placeholder sermons while Sanity is being set up
 const PLACEHOLDER_SERMONS: Sermon[] = [
-  { _id: "1", title: "Biblical Prosperity — RBTC Taster Course", youtubeId: "", seriesTag: "RBTC Taster" },
-  { _id: "2", title: "How to be Led by the Spirit", youtubeId: "", seriesTag: "Rhema Nigeria" },
-  { _id: "3", title: "Pioneer Spirit — Walking in God's Call", youtubeId: "", seriesTag: "Rhema Nigeria" },
-  { _id: "4", title: "Faith for the Impossible", youtubeId: "", seriesTag: "Special Session" },
-  { _id: "5", title: "The Move of the Holy Ghost", youtubeId: "", seriesTag: "Rhema Nigeria" },
-  { _id: "6", title: "Kingdom Mentorship — The Next Generation", youtubeId: "", seriesTag: "Mentorship" },
+  {
+    _id: "1",
+    title: "Teaching by Rev. Dokun Idowu",
+    youtubeId: "WuP65UIetl8",
+    seriesTag: "Rhema Nigeria",
+    description: "An anointed teaching by Rev. Dokun Idowu, graced by God for the gifts of the Spirit and the move of the Holy Ghost.",
+  },
+  {
+    _id: "2",
+    title: "Live Teaching - Rev. Dokun Idowu",
+    youtubeId: "xu5alIBdtCg",
+    seriesTag: "Rhema Live",
+    description: "A live ministry session with Rev. Dokun Idowu, Executive Leader at Rhema Nigeria.",
+  },
+  {
+    _id: "3",
+    title: "Live Teaching - Rev. Dokun Idowu",
+    youtubeId: "MQokt0F5Scs",
+    seriesTag: "Rhema Live",
+    description: "Expect to be richly blessed as Rev. Dokun Idowu ministers in a practical way.",
+  },
 ];
 
 function VideoCard({ sermon, onClick }: { sermon: Sermon; onClick: () => void }) {
