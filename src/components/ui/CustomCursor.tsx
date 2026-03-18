@@ -53,15 +53,14 @@ export default function CustomCursor() {
     };
   }, []);
 
+  // Only render on mouse devices — never on mobile/touch
   return (
     <>
-      {/* Inner dot */}
       <div
         ref={dotRef}
-        className="fixed top-0 left-0 w-2 h-2 rounded-full bg-amber z-[9998] pointer-events-none mix-blend-difference"
-        style={{ transition: "opacity 0.2s" }}
+        className="fixed top-0 left-0 w-2 h-2 rounded-full bg-amber z-[9998] pointer-events-none"
+        style={{ transition: "opacity 0.2s", overflow: "hidden" }}
       />
-      {/* Outer trailing ring */}
       <div
         ref={ringRef}
         className="fixed top-0 left-0 w-10 h-10 rounded-full border border-amber/50 z-[9997] pointer-events-none"
