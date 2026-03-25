@@ -1,241 +1,145 @@
-"use client";
-import { useState } from "react";
+import type { Metadata } from "next";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
+import ClientShell from "@/components/ui/ClientShell";
 
-const AMOUNTS = [1000, 2500, 5000, 10000, 25000, 50000];
+export const metadata: Metadata = {
+  title: "Give & Partner | Rev. Dokun Idowu",
+  description: "Partner with Rev. Dokun Idowu's ministry. Your giving advances the Kingdom of God.",
+};
 
 const GIVING_REASONS = [
-  {
-    icon: "✦",
-    title: "Support the Ministry",
-    body: "Your giving directly funds teaching resources, conferences, and outreach through Rev. Dokun Idowu's ministry.",
-  },
-  {
-    icon: "✦",
-    title: "Partner in the Word",
-    body: "Every partnership sows into the preaching of the Gospel, the training of ministers, and the expansion of the Kingdom.",
-  },
-  {
-    icon: "✦",
-    title: "Invest in Mentorship",
-    body: "Your support helps keep the mentorship platform accessible to the next generation of Kingdom leaders.",
-  },
+  { icon: "✦", title: "Reach More People", desc: "Your partnership enables the Word of God to reach more cities, campuses, and nations through conferences and teaching sessions." },
+  { icon: "✦", title: "Train Ministers", desc: "Support the training of the next generation of ministers through Rhema Bible Training Centre and discipleship platforms." },
+  { icon: "✦", title: "Pioneer New Works", desc: "Help fund the pioneer efforts Rev. Idowu carries — planting new ministry works and Kingdom initiatives." },
 ];
 
 export default function GivePage() {
-  const [selected, setSelected] = useState<number | null>(null);
-  const [custom, setCustom] = useState("");
-  const [frequency, setFrequency] = useState<"once" | "monthly">("once");
-  const [submitted, setSubmitted] = useState(false);
-
-  const amount = custom ? Number(custom) : selected;
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    setSubmitted(true);
-    setTimeout(() => setSubmitted(false), 5000);
-  };
-
   return (
-    <>
+    <ClientShell>
       <Navbar />
       <main className="bg-smoke min-h-screen">
 
-        {/* Hero */}
-        <div className="bg-mahogany pt-36 pb-20 px-6 lg:px-16 text-center">
-          <div className="max-w-2xl mx-auto">
-            <p className="text-[11px] tracking-[0.25em] uppercase text-amber font-sans font-medium mb-4">
-              PDee · Give
-            </p>
-            <h1
-              className="text-4xl lg:text-6xl font-bold text-parchment leading-tight mb-5"
-              style={{ fontFamily: "var(--font-display)" }}
-            >
-              Give &amp; Partner
+        <section className="bg-mahogany pt-36 pb-24 relative overflow-hidden">
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_70%_30%,rgba(196,98,45,0.12)_0%,transparent_60%)]" />
+          <div className="section-wrap relative z-10">
+            <p className="section-eyebrow mb-4">Kingdom Partnership</p>
+            <h1 className="font-display text-5xl lg:text-7xl font-black text-parchment leading-tight mb-6" style={{ fontFamily: "var(--font-display)" }}>
+              Give &amp;
+              <span className="block text-amber italic">Partner</span>
             </h1>
-            <div className="w-12 h-0.5 bg-amber mx-auto mb-6" />
-            <p className="text-parchment/65 text-lg font-sans leading-relaxed">
-              &ldquo;But this I say, He which soweth sparingly shall reap also sparingly; and he which soweth bountifully shall reap also bountifully.&rdquo;
+            <p className="text-parchment/70 font-sans text-lg max-w-xl leading-relaxed">
+              When you partner with this ministry, you become a co-labourer in the harvest. Every seed you sow goes directly into the advancement of God&apos;s Kingdom.
             </p>
-            <p className="text-amber text-sm font-sans mt-3 tracking-wide">— 2 Corinthians 9:6</p>
           </div>
-        </div>
+        </section>
 
-        <div className="max-w-5xl mx-auto px-6 lg:px-16 py-20">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-20">
+        <section className="py-24">
+          <div className="section-wrap">
 
-            {/* Left — Why give */}
-            <div>
-              <h2
-                className="text-2xl lg:text-3xl font-bold text-espresso mb-3 leading-snug"
-                style={{ fontFamily: "var(--font-display)" }}
-              >
-                Partner with the Ministry
-              </h2>
-              <div className="w-10 h-0.5 bg-amber mb-8" />
-
-              <div className="space-y-8 mb-12">
-                {GIVING_REASONS.map((r, i) => (
-                  <div key={i} className="flex gap-5">
-                    <span className="text-amber text-lg mt-0.5 flex-shrink-0">{r.icon}</span>
-                    <div>
-                      <h3 className="text-base font-bold text-espresso font-sans mb-2">{r.title}</h3>
-                      <p className="text-umber font-sans text-base leading-relaxed">{r.body}</p>
-                    </div>
-                  </div>
-                ))}
-              </div>
-
-              {/* Bank details */}
-              <div className="bg-espresso text-parchment p-8">
-                <p className="text-[10px] tracking-[0.22em] uppercase text-amber font-sans font-medium mb-5">
-                  Bank Transfer Details
-                </p>
-                {[
-                  { label: "Account Name", value: "Rev. Dokun Idowu Ministry" },
-                  { label: "Bank", value: "To be updated" },
-                  { label: "Account No.", value: "To be updated" },
-                  { label: "Sort Code", value: "To be updated" },
-                ].map((d) => (
-                  <div key={d.label} className="flex justify-between py-3 border-b border-amber/10 last:border-0">
-                    <span className="text-parchment/50 font-sans text-sm">{d.label}</span>
-                    <span className="text-parchment font-sans text-sm font-medium">{d.value}</span>
-                  </div>
-                ))}
-                <p className="text-parchment/40 text-xs font-sans mt-5 leading-relaxed">
-                  After transferring, please send your name and reference to{" "}
-                  <a href="mailto:info@dokuniidowu.org" className="text-amber hover:underline">
-                    info@dokuniidowu.org
-                  </a>
-                </p>
-              </div>
+            {/* Scripture */}
+            <div className="text-center mb-20">
+              <p className="font-serif text-2xl lg:text-3xl text-espresso italic leading-relaxed max-w-2xl mx-auto" style={{ fontFamily: "var(--font-serif)" }}>
+                &ldquo;But this I say, He which soweth sparingly shall reap also sparingly; and he which soweth bountifully shall reap also bountifully.&rdquo;
+              </p>
+              <p className="text-amber text-sm font-sans tracking-widest uppercase mt-5">2 Corinthians 9:6</p>
+              <div className="w-12 h-px bg-amber mx-auto mt-5" />
             </div>
 
-            {/* Right — Give form */}
-            <div>
-              <h2
-                className="text-2xl lg:text-3xl font-bold text-espresso mb-3"
-                style={{ fontFamily: "var(--font-display)" }}
-              >
-                Make a Gift
-              </h2>
-              <div className="w-10 h-0.5 bg-amber mb-8" />
+            {/* Why give */}
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-20">
+              {GIVING_REASONS.map((item, i) => (
+                <div key={i} className="bg-white border border-sand/40 p-8 hover:border-amber/40 transition-colors">
+                  <span className="text-amber text-xl block mb-4">{item.icon}</span>
+                  <h3 className="font-display text-xl font-bold text-espresso mb-3" style={{ fontFamily: "var(--font-display)" }}>{item.title}</h3>
+                  <p className="font-sans text-umber leading-relaxed text-[15px]">{item.desc}</p>
+                </div>
+              ))}
+            </div>
 
-              <form onSubmit={handleSubmit} className="flex flex-col gap-5">
-                {/* Frequency toggle */}
-                <div className="flex border border-sand/60 overflow-hidden">
-                  {(["once", "monthly"] as const).map((f) => (
-                    <button
-                      key={f}
-                      type="button"
-                      onClick={() => setFrequency(f)}
-                      className={`flex-1 py-3 text-sm font-sans font-semibold tracking-widest uppercase transition-colors ${
-                        frequency === f
-                          ? "bg-espresso text-amber"
-                          : "bg-white text-umber hover:bg-linen"
-                      }`}
-                    >
-                      {f === "once" ? "One-time" : "Monthly"}
-                    </button>
+            {/* Giving options */}
+            <div className="mb-6">
+              <p className="section-eyebrow mb-4">How to Give</p>
+              <h2 className="font-display text-3xl lg:text-4xl font-bold text-espresso mb-2" style={{ fontFamily: "var(--font-display)" }}>
+                Ways to Partner
+              </h2>
+              <div className="w-12 h-px bg-amber mt-4 mb-12" />
+            </div>
+
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-20">
+
+              {/* Bank Transfer */}
+              <div className="bg-white border border-sand/40 p-8 lg:p-10">
+                <div className="flex items-center gap-4 mb-6">
+                  <div className="w-12 h-12 bg-espresso flex items-center justify-center flex-shrink-0">
+                    <svg className="w-5 h-5 text-amber" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                      <rect x="1" y="4" width="22" height="16" rx="2"/><line x1="1" y1="10" x2="23" y2="10"/>
+                    </svg>
+                  </div>
+                  <h3 className="font-display text-xl font-bold text-espresso" style={{ fontFamily: "var(--font-display)" }}>Bank Transfer</h3>
+                </div>
+                <div className="space-y-4">
+                  <div className="bg-linen p-4">
+                    <p className="text-[10px] tracking-widest uppercase text-taupe font-sans mb-1">Account Name</p>
+                    <p className="font-sans font-semibold text-espresso">Dokun Idowu Ministries</p>
+                  </div>
+                  <div className="bg-linen p-4">
+                    <p className="text-[10px] tracking-widest uppercase text-taupe font-sans mb-1">Bank</p>
+                    <p className="font-sans font-semibold text-espresso">To be provided</p>
+                  </div>
+                  <div className="bg-linen p-4">
+                    <p className="text-[10px] tracking-widest uppercase text-taupe font-sans mb-1">Account Number</p>
+                    <p className="font-sans font-semibold text-espresso">To be provided</p>
+                  </div>
+                </div>
+                <p className="text-xs text-umber/50 font-sans mt-4 leading-relaxed">
+                  After transferring, please send a message via the contact form with your name and amount so we can acknowledge your gift.
+                </p>
+              </div>
+
+              {/* Online / Contact */}
+              <div className="bg-espresso p-8 lg:p-10">
+                <div className="flex items-center gap-4 mb-6">
+                  <div className="w-12 h-12 bg-amber/20 flex items-center justify-center flex-shrink-0">
+                    <svg className="w-5 h-5 text-amber" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                      <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                    </svg>
+                  </div>
+                  <h3 className="font-display text-xl font-bold text-parchment" style={{ fontFamily: "var(--font-display)" }}>Partner with Us</h3>
+                </div>
+                <p className="text-parchment/60 font-sans leading-relaxed text-[15px] mb-8">
+                  To become a regular ministry partner or to enquire about online giving options, please reach out directly. We value every partnership and will respond personally.
+                </p>
+                <div className="space-y-4 mb-8">
+                  {[
+                    "Receive regular ministry updates",
+                    "Be remembered in prayer",
+                    "Access to exclusive teaching materials",
+                    "Partner newsletters and devotionals",
+                  ].map((benefit) => (
+                    <div key={benefit} className="flex items-start gap-3">
+                      <span className="text-amber mt-1 flex-shrink-0">&#10003;</span>
+                      <p className="text-parchment/70 font-sans text-[15px]">{benefit}</p>
+                    </div>
                   ))}
                 </div>
-
-                {/* Amount grid */}
-                <div>
-                  <label className="block text-[11px] tracking-[0.16em] uppercase text-taupe font-sans font-semibold mb-3">
-                    Select Amount (₦)
-                  </label>
-                  <div className="grid grid-cols-3 gap-2">
-                    {AMOUNTS.map((a) => (
-                      <button
-                        key={a}
-                        type="button"
-                        onClick={() => { setSelected(a); setCustom(""); }}
-                        className={`py-3 text-sm font-sans font-semibold border transition-colors ${
-                          selected === a && !custom
-                            ? "bg-espresso text-amber border-espresso"
-                            : "bg-white text-espresso border-sand/60 hover:border-amber/50"
-                        }`}
-                      >
-                        ₦{a.toLocaleString()}
-                      </button>
-                    ))}
-                  </div>
-                </div>
-
-                {/* Custom amount */}
-                <div>
-                  <label className="block text-[11px] tracking-[0.16em] uppercase text-taupe font-sans font-semibold mb-2">
-                    Or enter custom amount
-                  </label>
-                  <div className="relative">
-                    <span className="absolute left-4 top-1/2 -translate-y-1/2 text-taupe font-sans font-semibold">₦</span>
-                    <input
-                      type="number"
-                      min="100"
-                      placeholder="0"
-                      value={custom}
-                      onChange={(e) => { setCustom(e.target.value); setSelected(null); }}
-                      className="w-full bg-white border border-sand/60 focus:border-amber pl-8 pr-4 py-3.5 text-sm text-espresso font-sans outline-none transition-colors"
-                    />
-                  </div>
-                </div>
-
-                {/* Name */}
-                <div className="grid grid-cols-2 gap-3">
-                  <div>
-                    <label className="block text-[11px] tracking-[0.16em] uppercase text-taupe font-sans font-semibold mb-2">First Name *</label>
-                    <input required placeholder="Tunde" className="w-full bg-white border border-sand/60 focus:border-amber px-4 py-3.5 text-sm text-espresso font-sans outline-none transition-colors" />
-                  </div>
-                  <div>
-                    <label className="block text-[11px] tracking-[0.16em] uppercase text-taupe font-sans font-semibold mb-2">Last Name *</label>
-                    <input required placeholder="Adeyemi" className="w-full bg-white border border-sand/60 focus:border-amber px-4 py-3.5 text-sm text-espresso font-sans outline-none transition-colors" />
-                  </div>
-                </div>
-
-                {/* Email */}
-                <div>
-                  <label className="block text-[11px] tracking-[0.16em] uppercase text-taupe font-sans font-semibold mb-2">Email Address *</label>
-                  <input required type="email" placeholder="your@email.com" className="w-full bg-white border border-sand/60 focus:border-amber px-4 py-3.5 text-sm text-espresso font-sans outline-none transition-colors" />
-                </div>
-
-                {/* Purpose */}
-                <div>
-                  <label className="block text-[11px] tracking-[0.16em] uppercase text-taupe font-sans font-semibold mb-2">Purpose (optional)</label>
-                  <select className="w-full bg-white border border-sand/60 focus:border-amber px-4 py-3.5 text-sm text-espresso font-sans outline-none transition-colors appearance-none">
-                    <option value="">General Ministry Support</option>
-                    <option>Conference Sponsorship</option>
-                    <option>Mentorship Platform</option>
-                    <option>Teaching Resources</option>
-                    <option>Outreach &amp; Evangelism</option>
-                  </select>
-                </div>
-
-                {submitted && (
-                  <div className="bg-amber/10 border-l-2 border-amber px-5 py-4">
-                    <p className="text-sm font-sans text-espresso font-medium">
-                      ✦ Thank you for your giving. We will be in touch shortly. God bless you!
-                    </p>
-                  </div>
-                )}
-
-                <button
-                  type="submit"
-                  className="bg-ember text-parchment font-sans font-bold text-sm tracking-widest uppercase px-8 py-4 hover:bg-mahogany transition-colors mt-2"
-                >
-                  {amount ? `Give ₦${Number(amount).toLocaleString()} ${frequency === "monthly" ? "/ month" : ""}` : "Give Now"} →
-                </button>
-
-                <p className="text-xs text-taupe/60 font-sans text-center leading-relaxed">
-                  Your gift is a seed sown into the Kingdom. All giving records are kept private.
-                </p>
-              </form>
+                <a href="/#contact" className="btn-primary w-full justify-center">Become a Partner &rarr;</a>
+              </div>
             </div>
+
+            {/* Bottom scripture */}
+            <div className="bg-linen p-10 lg:p-14 text-center border-t-4 border-amber">
+              <p className="font-serif text-xl lg:text-2xl text-espresso italic leading-relaxed max-w-2xl mx-auto mb-4" style={{ fontFamily: "var(--font-serif)" }}>
+                &ldquo;Give, and it shall be given unto you; good measure, pressed down, and shaken together, and running over, shall men give into your bosom.&rdquo;
+              </p>
+              <p className="text-amber text-sm font-sans tracking-widest uppercase">Luke 6:38</p>
+            </div>
+
           </div>
-        </div>
+        </section>
+
       </main>
       <Footer />
-    </>
+    </ClientShell>
   );
 }

@@ -1,170 +1,111 @@
+import type { Metadata } from "next";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
-import Link from "next/link";
+import ClientShell from "@/components/ui/ClientShell";
 
-const ITINERARY = [
-  {
-    month: "April 2026",
-    items: [
-      { date: "Apr 6", day: "Mon", title: "PDee Speaks — Online Teaching Session", location: "Virtual / Zoom", status: "confirmed" },
-      { date: "Apr 20", day: "Sun", title: "Guest Ministration — Abuja", location: "Abuja, Nigeria", status: "confirmed" },
-    ],
-  },
-  {
-    month: "May 2026",
-    items: [
-      { date: "May 15", day: "Fri", title: "Rhema Nigeria Annual Conference — Day 1", location: "Rhema Nigeria HQ, Abuja", status: "confirmed" },
-      { date: "May 16", day: "Sat", title: "Rhema Nigeria Annual Conference — Day 2", location: "Rhema Nigeria HQ, Abuja", status: "confirmed" },
-      { date: "May 17", day: "Sun", title: "Rhema Nigeria Annual Conference — Day 3", location: "Rhema Nigeria HQ, Abuja", status: "confirmed" },
-    ],
-  },
-  {
-    month: "June 2026",
-    items: [
-      { date: "Jun 7", day: "Sun", title: "PDee Speaks — Abuja Teaching Night", location: "Abuja, Nigeria", status: "confirmed" },
-      { date: "Jun 22", day: "Mon", title: "Mentorship Session — Cohort 2 Orientation", location: "Online", status: "tentative" },
-    ],
-  },
-  {
-    month: "July 2026",
-    items: [
-      { date: "Jul 12", day: "Sun", title: "Mentorship Intensive — Day 1", location: "Online / Hybrid", status: "confirmed" },
-      { date: "Jul 13", day: "Mon", title: "Mentorship Intensive — Day 2", location: "Online / Hybrid", status: "confirmed" },
-      { date: "Jul 27", day: "Sun", title: "Guest Ministration — Lagos", location: "Lagos, Nigeria", status: "tentative" },
-    ],
-  },
-  {
-    month: "August 2026",
-    items: [
-      { date: "Aug 2", day: "Sun", title: "RBTC Taster Course", location: "Rhema Nigeria Lagos Campus", status: "confirmed" },
-    ],
-  },
+export const metadata: Metadata = {
+  title: "Itinerary | Rev. Dokun Idowu",
+  description: "Ministry itinerary and speaking schedule for Rev. Dokun Idowu.",
+};
+
+const PAST = [
+  { year: "2024", title: "Rhema Conference", location: "Abuja, Nigeria", role: "Speaker" },
+  { year: "2024", title: "RBTC Graduation Ceremony", location: "Rhema Nigeria", role: "Faculty Leader" },
+  { year: "2023", title: "Doxazo — An Evening of Worship", location: "Rock of Ages Mall, Abuja", role: "Ministering" },
+  { year: "2023", title: "Rhema Conference Lagos", location: "Lagos, Nigeria", role: "Speaker" },
+  { year: "2022", title: "How to be Led by the Spirit", location: "Rhema Ghana", role: "Speaker" },
+  { year: "2019", title: "RBTC Taster — Biblical Prosperity", location: "Rhema Nigeria", role: "Teacher" },
 ];
 
 export default function ItineraryPage() {
   return (
-    <>
+    <ClientShell>
       <Navbar />
       <main className="bg-smoke min-h-screen">
 
-        {/* Hero */}
-        <div className="bg-espresso pt-36 pb-20 px-6 lg:px-16">
-          <div className="max-w-4xl mx-auto">
-            <p className="text-[11px] tracking-[0.25em] uppercase text-amber font-sans font-medium mb-4">
-              PDee · Schedule
-            </p>
-            <h1
-              className="text-4xl lg:text-6xl font-bold text-parchment leading-tight mb-5"
-              style={{ fontFamily: "var(--font-display)" }}
-            >
-              Ministry Itinerary
+        <section className="bg-mahogany pt-36 pb-24 relative overflow-hidden">
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_30%_60%,rgba(196,98,45,0.1)_0%,transparent_60%)]" />
+          <div className="section-wrap relative z-10">
+            <p className="section-eyebrow mb-4">Speaking Schedule</p>
+            <h1 className="font-display text-5xl lg:text-7xl font-black text-parchment leading-tight mb-6" style={{ fontFamily: "var(--font-display)" }}>
+              Ministry
+              <span className="block text-amber italic">Itinerary</span>
             </h1>
-            <div className="w-12 h-0.5 bg-amber mb-6" />
-            <p className="text-parchment/60 text-lg font-sans leading-relaxed max-w-xl">
-              Rev. Dokun Idowu&apos;s confirmed and upcoming ministry schedule. For booking and invitations, use the contact form.
+            <p className="text-parchment/70 font-sans text-lg max-w-xl leading-relaxed">
+              Rev. Dokun Idowu ministers at conferences, seminars, and training sessions across Nigeria and beyond. Invite him to your event or view his upcoming schedule.
             </p>
-            <Link
-              href="/contact"
-              className="inline-flex items-center gap-2 mt-8 bg-ember text-parchment text-sm font-sans font-semibold tracking-widest uppercase px-8 py-4 hover:bg-mahogany transition-colors"
-            >
-              Invite Rev. Idowu →
-            </Link>
-          </div>
-        </div>
-
-        {/* Schedule */}
-        <div className="max-w-4xl mx-auto px-6 lg:px-16 py-20">
-
-          {/* Legend */}
-          <div className="flex items-center gap-6 mb-12 pb-6 border-b border-sand/40">
-            <div className="flex items-center gap-2 text-sm font-sans text-umber">
-              <span className="w-3 h-3 rounded-full bg-amber inline-block" /> Confirmed
-            </div>
-            <div className="flex items-center gap-2 text-sm font-sans text-umber">
-              <span className="w-3 h-3 rounded-full border-2 border-taupe inline-block" /> Tentative
+            <div className="flex flex-wrap gap-4 mt-10">
+              <a href="/#contact" className="btn-primary">Invite Rev. Idowu &rarr;</a>
+              <a href="/events" className="btn-outline text-parchment border-parchment/20 hover:border-amber hover:text-amber">View Upcoming Events</a>
             </div>
           </div>
+        </section>
 
-          {ITINERARY.map((group) => (
-            <div key={group.month} className="mb-14">
-              {/* Month header */}
-              <h2
-                className="text-2xl font-bold text-espresso mb-6"
-                style={{ fontFamily: "var(--font-display)" }}
-              >
-                {group.month}
-              </h2>
+        <section className="py-24">
+          <div className="section-wrap">
 
-              <div className="space-y-3">
-                {group.items.map((item, i) => (
-                  <div
-                    key={i}
-                    className="flex items-start gap-5 bg-white border border-sand/30 px-6 py-5 hover:border-amber/40 transition-colors group"
-                  >
-                    {/* Date */}
-                    <div className="flex-shrink-0 w-16 text-center">
-                      <p className="text-[10px] font-sans font-semibold tracking-widest uppercase text-taupe">
-                        {item.day}
-                      </p>
-                      <p className="text-xl font-bold text-espresso font-sans">
-                        {item.date.split(" ")[1]}
-                      </p>
-                    </div>
+            {/* Booking info */}
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-20">
+              {[
+                { icon: "✦", title: "Conferences", desc: "Rev. Idowu ministers at full conferences and multi-day gatherings, bringing the Word with clarity and the move of the Spirit." },
+                { icon: "✦", title: "Seminars & Workshops", desc: "Focused teaching sessions on Faith, the Holy Spirit, Pioneer Ministry, and Leadership — practical and Word-based." },
+                { icon: "✦", title: "Church Ministrations", desc: "Available for Sunday services, special meetings, and revival sessions. Graced for the gifts of the Spirit in congregational settings." },
+              ].map((item, i) => (
+                <div key={i} className="bg-white border border-sand/40 p-8 hover:border-amber/40 transition-colors">
+                  <span className="text-amber text-xl block mb-4">{item.icon}</span>
+                  <h3 className="font-display text-xl font-bold text-espresso mb-3" style={{ fontFamily: "var(--font-display)" }}>{item.title}</h3>
+                  <p className="font-sans text-umber leading-relaxed text-[15px]">{item.desc}</p>
+                </div>
+              ))}
+            </div>
 
-                    {/* Divider */}
-                    <div className="w-px self-stretch bg-sand/50 flex-shrink-0" />
+            {/* Past engagements */}
+            <div className="mb-6">
+              <p className="section-eyebrow mb-4">Track Record</p>
+              <h2 className="font-display text-3xl lg:text-4xl font-bold text-espresso mb-2" style={{ fontFamily: "var(--font-display)" }}>Past Engagements</h2>
+              <div className="w-12 h-px bg-amber mt-4 mb-10" />
+            </div>
 
-                    {/* Content */}
-                    <div className="flex-1 min-w-0">
-                      <h3 className="text-base font-semibold text-espresso font-sans leading-snug group-hover:text-ember transition-colors">
-                        {item.title}
-                      </h3>
-                      <div className="flex items-center gap-1.5 mt-1.5 text-sm text-umber/60 font-sans">
-                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                          <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/>
-                        </svg>
-                        {item.location}
-                      </div>
-                    </div>
-
-                    {/* Status */}
-                    <div className="flex-shrink-0 pt-0.5">
-                      {item.status === "confirmed" ? (
-                        <span className="w-3 h-3 rounded-full bg-amber inline-block" title="Confirmed" />
-                      ) : (
-                        <span className="w-3 h-3 rounded-full border-2 border-taupe inline-block" title="Tentative" />
-                      )}
-                    </div>
+            <div className="space-y-0 border-t border-sand/40">
+              {PAST.map((item, i) => (
+                <div key={i} className="flex items-center gap-6 py-5 border-b border-sand/40 hover:bg-white/60 transition-colors px-4 group">
+                  <span className="font-display text-lg font-bold text-amber/70 w-12 flex-shrink-0" style={{ fontFamily: "var(--font-display)" }}>{item.year}</span>
+                  <div className="flex-1 min-w-0">
+                    <p className="font-sans font-semibold text-espresso text-base group-hover:text-ember transition-colors truncate">{item.title}</p>
+                    <p className="font-sans text-umber/60 text-sm mt-0.5">{item.location}</p>
                   </div>
-                ))}
+                  <span className="text-[10px] tracking-[0.15em] uppercase text-amber bg-amber/10 px-3 py-1 font-sans font-medium flex-shrink-0">{item.role}</span>
+                </div>
+              ))}
+            </div>
+
+            {/* Invite CTA */}
+            <div className="mt-20 grid grid-cols-1 lg:grid-cols-2 gap-0">
+              <div className="bg-espresso p-10 lg:p-14">
+                <p className="text-[11px] tracking-[0.22em] uppercase text-amber font-sans font-medium mb-4">Booking</p>
+                <h2 className="font-display text-3xl font-bold text-parchment mb-4" style={{ fontFamily: "var(--font-display)" }}>Invite Rev. Idowu</h2>
+                <p className="text-parchment/60 font-sans leading-relaxed mb-8 text-[15px]">To invite Rev. Dokun Idowu to minister at your church, conference, or event, please get in touch with full details of your event.</p>
+                <a href="/#contact" className="btn-primary">Send an Invitation &rarr;</a>
+              </div>
+              <div className="bg-amber p-10 lg:p-14">
+                <p className="text-[11px] tracking-[0.22em] uppercase text-mahogany/60 font-sans font-medium mb-4">What to Expect</p>
+                <h2 className="font-display text-3xl font-bold text-mahogany mb-6" style={{ fontFamily: "var(--font-display)" }}>Ministry in Word &amp; Spirit</h2>
+                <ul className="space-y-3">
+                  {["Anointed Bible teaching", "Practical and applicable messages", "Demonstration of the gifts of the Spirit", "Move of the Holy Ghost", "Pioneer and leadership training"].map((item) => (
+                    <li key={item} className="flex items-start gap-3 text-mahogany/80 font-sans text-[15px]">
+                      <span className="text-mahogany/50 mt-1 flex-shrink-0">&#10003;</span>
+                      {item}
+                    </li>
+                  ))}
+                </ul>
               </div>
             </div>
-          ))}
 
-          {/* Invite CTA */}
-          <div className="bg-mahogany p-10 text-center mt-8">
-            <p className="text-[11px] tracking-[0.22em] uppercase text-amber font-sans font-medium mb-3">
-              Invitations
-            </p>
-            <h3
-              className="text-2xl lg:text-3xl font-bold text-parchment mb-4"
-              style={{ fontFamily: "var(--font-display)" }}
-            >
-              Invite Rev. Dokun Idowu to Minister
-            </h3>
-            <p className="text-parchment/60 font-sans text-base max-w-md mx-auto mb-8 leading-relaxed">
-              For speaking engagements, conferences, and special ministrations — reach out through the contact form.
-            </p>
-            <Link
-              href="/contact"
-              className="inline-flex items-center gap-2 bg-amber text-mahogany text-sm font-sans font-bold tracking-widest uppercase px-8 py-4 hover:bg-gold-light transition-colors"
-            >
-              Send an Invitation →
-            </Link>
           </div>
-        </div>
+        </section>
+
       </main>
       <Footer />
-    </>
+    </ClientShell>
   );
 }
