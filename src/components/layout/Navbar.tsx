@@ -37,19 +37,18 @@ export default function Navbar() {
             : "py-5 bg-transparent"
         }`}
       >
-        {/* Logo */}
+        {/* PDee Logo */}
         <button
           onClick={() => scrollTo("#home")}
           className="flex flex-col items-start text-left"
         >
-          <span
-            className="font-display text-xl font-bold leading-tight text-parchment"
-            style={{ fontFamily: "var(--font-display)" }}
-          >
+          <div style={{ display: "flex", alignItems: "baseline", gap: "1px", lineHeight: 1 }}>
+            <span style={{ fontFamily: "var(--font-display)", fontSize: "1.9rem", fontWeight: 900, fontStyle: "italic", color: "#C8A84B", letterSpacing: "-0.02em" }}>P</span>
+            <span style={{ fontFamily: "var(--font-display)", fontSize: "1.9rem", fontWeight: 900, fontStyle: "italic", color: "#F5EFE0", letterSpacing: "-0.02em" }}>Dee</span>
+            <span style={{ width: 5, height: 5, borderRadius: "50%", background: "#C8A84B", display: "inline-block", marginLeft: 3, marginBottom: 5, flexShrink: 0 }} />
+          </div>
+          <span className="text-[9px] tracking-[0.22em] uppercase text-amber/60 font-sans font-light" style={{ marginTop: 1 }}>
             Rev. Dokun Idowu
-          </span>
-          <span className="text-[10px] tracking-[0.2em] uppercase text-amber/80 font-sans font-light mt-0.5">
-            Executive Leader · Rhema Nigeria
           </span>
         </button>
 
@@ -94,8 +93,8 @@ export default function Navbar() {
             </a>
             <a href="https://youtube.com/@RhemaNigeria" target="_blank" rel="noopener noreferrer"
               className="text-parchment/50 hover:text-red-500 transition-colors duration-200" aria-label="YouTube">
-              <svg width="17" height="12" viewBox="0 0 24 17" fill="currentColor">
-                <path d="M23.495 2.656a3.016 3.016 0 0 0-2.122-2.136C19.505 0 12 0 12 0S4.495 0 2.627.52A3.016 3.016 0 0 0 .505 2.656C0 4.537 0 8.455 0 8.455s0 3.918.505 5.799a3.016 3.016 0 0 0 2.122 2.136C4.495 17 12 17 12 17s7.505 0 9.373-.51a3.016 3.016 0 0 0 2.122-2.136C24 12.373 24 24 8.455 24 8.455s0-3.918-.505-5.799z"/>
+              <svg width="17" height="12" viewBox="0 0 24 17" xmlns="http://www.w3.org/2000/svg">
+                <path d="M23.495 2.656a3.016 3.016 0 0 0-2.122-2.136C19.505 0 12 0 12 0S4.495 0 2.627.52A3.016 3.016 0 0 0 .505 2.656C0 4.537 0 8.455 0 8.455s0 3.918.505 5.799a3.016 3.016 0 0 0 2.122 2.136C4.495 17 12 17 12 17s7.505 0 9.373-.51a3.016 3.016 0 0 0 2.122-2.136C24 12.373 24 8.455 24 8.455s0-3.918-.505-5.799z" fill="#FF0000"/>
                 <path d="M9.545 12.023V4.886l6.273 3.569-6.273 3.568z" fill="white"/>
               </svg>
             </a>
