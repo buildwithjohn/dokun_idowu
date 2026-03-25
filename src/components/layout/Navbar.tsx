@@ -92,6 +92,13 @@ export default function Navbar() {
                 <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
               </svg>
             </a>
+            <a href="https://youtube.com/@RhemaNigeria" target="_blank" rel="noopener noreferrer"
+              className="text-parchment/50 hover:text-red-500 transition-colors duration-200" aria-label="YouTube">
+              <svg width="17" height="12" viewBox="0 0 24 17" fill="currentColor">
+                <path d="M23.495 2.656a3.016 3.016 0 0 0-2.122-2.136C19.505 0 12 0 12 0S4.495 0 2.627.52A3.016 3.016 0 0 0 .505 2.656C0 4.537 0 8.455 0 8.455s0 3.918.505 5.799a3.016 3.016 0 0 0 2.122 2.136C4.495 17 12 17 12 17s7.505 0 9.373-.51a3.016 3.016 0 0 0 2.122-2.136C24 12.373 24 24 8.455 24 8.455s0-3.918-.505-5.799z"/>
+                <path d="M9.545 12.023V4.886l6.273 3.569-6.273 3.568z" fill="white"/>
+              </svg>
+            </a>
           </div>
           <button
             onClick={() => scrollTo("#contact")}
