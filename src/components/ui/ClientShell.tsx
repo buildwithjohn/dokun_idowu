@@ -3,8 +3,6 @@ import { useState, useCallback, useEffect } from "react";
 import dynamic from "next/dynamic";
 
 const Preloader    = dynamic(() => import("./Preloader"),    { ssr: false });
-const CustomCursor = dynamic(() => import("./CustomCursor"), { ssr: false });
-
 export default function ClientShell({ children }: { children: React.ReactNode }) {
   const [loaded, setLoaded] = useState(false);
   const onComplete = useCallback(() => setLoaded(true), []);
@@ -20,7 +18,6 @@ export default function ClientShell({ children }: { children: React.ReactNode })
   return (
     <>
       <Preloader onComplete={onComplete} />
-      <CustomCursor />
       {/* No wrapper div with opacity — avoids stacking context that causes scroll lag */}
       <div
         style={{

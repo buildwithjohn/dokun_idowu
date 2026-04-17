@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import "../styles/globals.css";
+import GlobalShell from "@/components/ui/GlobalShell";
 
 export const viewport: Viewport = {
   width: "device-width",
@@ -26,7 +27,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+        <GlobalShell>{children}</GlobalShell>
+      </body>
     </html>
   );
 }

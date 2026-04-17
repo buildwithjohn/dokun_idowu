@@ -405,8 +405,8 @@ export default function TeachingsSection({ sermons }: { sermons?: any[] }) {
             </div>
             <div className="grid grid-cols-2 gap-3 lg:gap-4">
               {[
-                { src: "/images/ministry-preaching-1.jpg", caption: "Teaching at the Rhema Conference", sub: "Isaiah 54 — Growth" },
-                { src: "/images/ministry-preaching-2.jpg", caption: "Rev. Dokun at the Pulpit", sub: "Ministering the Word" },
+                { src: "/images/ministry-preaching-1.jpg", caption: "Rhema Class Lagos", sub: "Teaching the Word" },
+                { src: "/images/ministry-preaching-2.jpg", caption: "Rhema Class Lagos", sub: "Ministering at the Pulpit" },
               ].map((photo, i) => (
                 <div key={i} className="relative group overflow-hidden" style={{ aspectRatio: "16/9" }}>
                   <Image
