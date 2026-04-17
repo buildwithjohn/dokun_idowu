@@ -3,13 +3,15 @@
 
 
 const QUICK = [
-  { label: "Home",       href: "#home" },
-  { label: "About",      href: "#about" },
-  { label: "Teachings",  href: "#teachings" },
-  { label: "Events",     href: "/events" },
-  { label: "Itinerary",  href: "/itinerary" },
-  { label: "Give",       href: "/give" },
-  { label: "Contact",    href: "#contact" },
+  { label: "Home",        href: "/" },
+  { label: "About",       href: "/about" },
+  { label: "Teachings",   href: "/teachings" },
+  { label: "Mentorship",  href: "/mentorship" },
+  { label: "Family",      href: "/family" },
+  { label: "Events",      href: "/events" },
+  { label: "Itinerary",   href: "/itinerary" },
+  { label: "Give",        href: "/give" },
+  { label: "Contact",     href: "/contact" },
 ];
 const MINISTRY = [
   { label: "Rhema Nigeria",          href: "https://rhemanigeria.com" },
@@ -84,21 +86,12 @@ export default function Footer() {
             <ul className="space-y-3">
               {QUICK.map((item) => (
                 <li key={item.label}>
-                  {item.href.startsWith("/") ? (
-                    <a
-                      href={item.href}
-                      className="text-sm text-parchment/50 hover:text-parchment transition-colors font-sans"
-                    >
-                      {item.label}
-                    </a>
-                  ) : (
-                    <button
-                      onClick={() => scrollTo(item.href.replace("#", ""))}
-                      className="text-sm text-parchment/50 hover:text-parchment transition-colors font-sans"
-                    >
-                      {item.label}
-                    </button>
-                  )}
+                  <a
+                    href={item.href}
+                    className="text-sm text-parchment/50 hover:text-parchment transition-colors font-sans"
+                  >
+                    {item.label}
+                  </a>
                 </li>
               ))}
             </ul>
