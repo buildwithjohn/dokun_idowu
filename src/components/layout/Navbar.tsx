@@ -31,7 +31,7 @@ export default function Navbar() {
 
   return (
     <>
-      <nav className={`fixed inset-x-0 top-0 z-50 flex items-center justify-between px-6 lg:px-12 transition-all duration-500 ${scrolled ? "py-3 bg-mahogany/97 backdrop-blur-md shadow-[0_1px_0_rgba(200,168,75,0.15)]" : "py-5 bg-transparent"}`}>
+      <nav className="fixed inset-x-0 top-0 z-50 flex items-center justify-between px-6 lg:px-12 bg-mahogany/97 backdrop-blur-md shadow-[0_1px_0_rgba(200,168,75,0.15)] py-4 transition-all duration-300">
         {/* PDee Logo */}
         <Link href="/" className="flex flex-col items-start text-left">
           <div style={{ display:"flex", alignItems:"baseline", gap:"1px", lineHeight:1 }}>

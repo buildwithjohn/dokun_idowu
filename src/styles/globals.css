@@ -143,9 +143,7 @@
   100% { transform: translateX(-50%); }
 }
 
-/* Hide default cursor ONLY on mouse devices, never on touch/mobile */
-@media (pointer: fine) and (hover: hover) {
-  * { cursor: none !important; }
+
 }
 
 /* Hide scrollbar utility */
