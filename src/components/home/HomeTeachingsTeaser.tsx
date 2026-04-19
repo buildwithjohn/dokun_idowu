@@ -74,7 +74,7 @@ export default function HomeTeachingsTeaser() {
         {/* CTA strip */}
         <div className={`mt-14 pt-8 border-t border-amber/10 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-5 transition-all duration-700 delay-300 ${inView ? "opacity-100" : "opacity-0"}`}>
           <p className="text-parchment/40 font-sans text-sm">
-            Conferences · Churches · Ministry engagements &mdash; 11 messages available
+            Conferences · Itinerary · Podcast &mdash; 11 messages available
           </p>
           <Link href="/teachings" className="inline-flex items-center gap-3 bg-amber text-mahogany font-sans font-bold text-sm tracking-widest uppercase px-8 py-4 hover:bg-gold-light transition-colors flex-shrink-0">
             <svg width="16" height="11" viewBox="0 0 24 17"><path d="M23.495 2.656a3.016 3.016 0 0 0-2.122-2.136C19.505 0 12 0 12 0S4.495 0 2.627.52A3.016 3.016 0 0 0 .505 2.656C0 4.537 0 8.455 0 8.455s0 3.918.505 5.799a3.016 3.016 0 0 0 2.122 2.136C4.495 17 12 17 12 17s7.505 0 9.373-.51a3.016 3.016 0 0 0 2.122-2.136C24 12.373 24 8.455 24 8.455s0-3.918-.505-5.799z" fill="#FF0000"/><path d="M9.545 12.023V4.886l6.273 3.569-6.273 3.568z" fill="white"/></svg>
