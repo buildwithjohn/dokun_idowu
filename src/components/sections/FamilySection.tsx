@@ -22,7 +22,7 @@ const STATIC_PHOTOS = [
     pos: "center top",
   },
   {
-    src: "/images/tobore-idowu.jpg",
+    src: "/images/mrstobore.jpg",
     caption: "Mrs. Tobore Idowu",
     sub: "Partner in Ministry",
     size: "normal",
