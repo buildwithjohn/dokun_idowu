@@ -347,7 +347,7 @@ export default function GivePage() {
                   ))}
                   <p className="text-xs text-umber/45 font-sans pt-2 leading-relaxed">
                     After transferring, please send your name and amount to{" "}
-                    <a href="mailto:info@dokuniidowu.org" className="text-amber hover:underline">info@dokuniidowu.org</a>{" "}
+                    <a href="mailto:info@dokuniidowu.com" className="text-amber hover:underline">info@dokuniidowu.com</a>{" "}
                     so we can acknowledge your gift.
                   </p>
                 </div>

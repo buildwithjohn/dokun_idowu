@@ -202,10 +202,10 @@ export default function MentorshipPage() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-amber/10">
               {PILLARS.map((p, i) => (
                 <div key={i} className="bg-mahogany/60 hover:bg-mahogany/90 p-10 lg:p-12 group transition-all duration-300 relative overflow-hidden">
-                  {/* Large background number */}
+                  {/* Large background number — positioned away from text */}
                   <span
-                    className="absolute top-6 right-8 font-black text-parchment/4 select-none pointer-events-none"
-                    style={{ fontFamily: "var(--font-display)", fontSize: "8rem", lineHeight: 1 }}
+                    className="absolute -top-4 right-4 font-black select-none pointer-events-none"
+                    style={{ fontFamily: "var(--font-display)", fontSize: "6rem", lineHeight: 1, color: "rgba(245,239,224,0.03)" }}
                   >
                     {p.num}
                   </span>

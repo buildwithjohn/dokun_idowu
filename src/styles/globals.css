@@ -89,9 +89,9 @@
 
   /* Btn primary - warm ember */
   .btn-primary {
-    @apply inline-flex items-center gap-2 bg-ember text-parchment font-sans font-medium
+    @apply inline-flex items-center gap-2 bg-amber text-mahogany font-sans font-semibold
            text-sm tracking-widest uppercase px-8 py-4 transition-all duration-300
-           hover:bg-mahogany hover:-translate-y-0.5 active:translate-y-0;
+           hover:bg-gold hover:-translate-y-0.5 active:translate-y-0;
   }
 
   /* Btn outline */

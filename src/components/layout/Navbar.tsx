@@ -31,7 +31,7 @@ export default function Navbar() {
 
   return (
     <>
-      <nav className="fixed inset-x-0 top-0 z-50 flex items-center justify-between px-6 lg:px-12 py-4 transition-all duration-300" style={{ backgroundColor: "#2A1B12", borderBottom: "1px solid rgba(200,168,75,0.15)" }}>
+      <nav className="fixed inset-x-0 top-0 z-50 flex items-center justify-between px-6 lg:px-12 py-4 transition-all duration-300" style={{ backgroundColor: "#2A1B12", borderBottom: "1px solid rgba(200,168,75,0.25)" }}>
         {/* PDee Logo */}
         <Link href="/" className="flex flex-col items-start text-left">
           <div style={{ display:"flex", alignItems:"baseline", gap:"1px", lineHeight:1 }}>
@@ -48,7 +48,7 @@ export default function Navbar() {
             const active = isActive(item.href);
             return (
               <li key={item.label}>
-                <Link href={item.href} className={`text-[11px] tracking-[0.12em] uppercase font-sans font-semibold transition-colors duration-200 relative pb-1 ${active ? "text-amber" : "text-parchment/65 hover:text-parchment"}`}>
+                <Link href={item.href} className={`text-[11px] tracking-[0.12em] uppercase font-sans font-semibold transition-colors duration-200 relative pb-1 ${active ? "text-amber" : "text-parchment/85 hover:text-parchment"}`}>
                   {item.label}
                   {active && <span className="absolute bottom-0 left-0 w-full h-px bg-amber" />}
                 </Link>
@@ -82,23 +82,29 @@ export default function Navbar() {
 
       {/* Mobile menu */}
       {menuOpen && (
-        <div className="fixed inset-0 z-[60] bg-mahogany flex flex-col items-center justify-center gap-7 px-6">
-          <button onClick={() => setMenuOpen(false)} className="absolute top-6 right-6 text-parchment/60 text-3xl hover:text-parchment">×</button>
-          <div style={{ display:"flex", alignItems:"baseline", gap:"1px", marginBottom:8 }}>
-            <span style={{ fontFamily:"var(--font-display)", fontSize:"2.5rem", fontWeight:900, fontStyle:"italic", color:"#C8A84B" }}>P</span>
-            <span style={{ fontFamily:"var(--font-display)", fontSize:"2.5rem", fontWeight:900, fontStyle:"italic", color:"#F5EFE0" }}>Dee</span>
-            <span style={{ width:6, height:6, borderRadius:"50%", background:"#C8A84B", display:"inline-block", marginLeft:3, marginBottom:6 }} />
-          </div>
-          {NAV_ITEMS.map((item) => (
-            <Link key={item.label} href={item.href} className={`text-2xl font-display italic transition-colors ${isActive(item.href) ? "text-amber" : "text-parchment/75 hover:text-amber"}`} style={{ fontFamily:"var(--font-display)" }}>
-              {item.label}
-            </Link>
-          ))}
-          <Link href="/contact" className="btn-primary mt-2">Connect →</Link>
-          <div className="flex gap-6 mt-2">
-            {[{href:"https://instagram.com/dokun_idowu",l:"IG"},{href:"https://www.facebook.com/iamdokunidowu",l:"FB"},{href:"https://x.com/DokunIdowu",l:"X"}].map(s => (
-              <a key={s.l} href={s.href} target="_blank" rel="noopener noreferrer" className="text-[10px] tracking-widest uppercase text-parchment/30 hover:text-amber font-sans">{s.l}</a>
-            ))}
+        <div className="fixed inset-0 z-[60] bg-mahogany overflow-y-auto">
+          <div className="min-h-full flex flex-col items-center justify-start pt-20 pb-10 px-6 gap-5">
+            <button onClick={() => setMenuOpen(false)} className="absolute top-5 right-5 w-10 h-10 flex items-center justify-center border border-parchment/20 text-parchment/60 hover:text-parchment hover:border-amber transition-colors text-xl">×</button>
+            <div style={{ display:"flex", alignItems:"baseline", gap:"1px", marginBottom:4 }}>
+              <span style={{ fontFamily:"var(--font-display)", fontSize:"2rem", fontWeight:900, fontStyle:"italic", color:"#C8A84B" }}>P</span>
+              <span style={{ fontFamily:"var(--font-display)", fontSize:"2rem", fontWeight:900, fontStyle:"italic", color:"#F5EFE0" }}>Dee</span>
+              <span style={{ width:5, height:5, borderRadius:"50%", background:"#C8A84B", display:"inline-block", marginLeft:3, marginBottom:5 }} />
+            </div>
+            <div className="w-full max-w-xs space-y-1 mt-2">
+              {NAV_ITEMS.map((item) => (
+                <Link key={item.label} href={item.href}
+                  className={`flex items-center justify-between w-full px-4 py-3 border-b border-parchment/5 text-base font-sans font-semibold transition-colors ${isActive(item.href) ? "text-amber" : "text-parchment/80 hover:text-amber"}`}>
+                  {item.label}
+                  <span className={`text-xs transition-colors ${isActive(item.href) ? "text-amber" : "text-parchment/20"}`}>→</span>
+                </Link>
+              ))}
+            </div>
+            <Link href="/contact" className="btn-primary mt-3 w-full max-w-xs justify-center">Connect →</Link>
+            <div className="flex gap-6 mt-1">
+              {[{href:"https://instagram.com/dokun_idowu",l:"IG"},{href:"https://www.facebook.com/iamdokunidowu",l:"FB"},{href:"https://x.com/DokunIdowu",l:"X"}].map(s => (
+                <a key={s.l} href={s.href} target="_blank" rel="noopener noreferrer" className="text-[10px] tracking-widest uppercase text-parchment/40 hover:text-amber font-sans">{s.l}</a>
+              ))}
+            </div>
           </div>
         </div>
       )}

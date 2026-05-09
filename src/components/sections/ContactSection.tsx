@@ -87,7 +87,7 @@ export default function ContactSection() {
                 </div>
                 <div>
                   <p className="text-[10px] tracking-[0.14em] uppercase text-taupe font-sans font-medium mb-1">Email</p>
-                  <p className="text-sm text-espresso font-sans">info@dokuniidowu.org</p>
+                  <p className="text-sm text-espresso font-sans">info@dokuniidowu.com</p>
                 </div>
               </div>
 
@@ -260,7 +260,7 @@ export default function ContactSection() {
               {status === "error" && (
                 <div className="bg-ember/10 border-l-2 border-ember px-5 py-4">
                   <p className="text-sm font-sans text-espresso">
-                    Something went wrong. Please email us directly at info@dokuniidowu.org
+                    Something went wrong. Please email us directly at info@dokuniidowu.com
                   </p>
                 </div>
               )}

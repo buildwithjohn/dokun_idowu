@@ -88,7 +88,7 @@ export default function Footer() {
                 <li key={item.label}>
                   <a
                     href={item.href}
-                    className="text-sm text-parchment/50 hover:text-parchment transition-colors font-sans"
+                    className="text-sm text-parchment/75 hover:text-parchment transition-colors font-sans"
                   >
                     {item.label}
                   </a>
@@ -109,7 +109,7 @@ export default function Footer() {
                     href={m.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-sm text-parchment/50 hover:text-parchment transition-colors font-sans"
+                    className="text-sm text-parchment/75 hover:text-parchment transition-colors font-sans"
                   >
                     {m.label} ↗
                   </a>
@@ -122,7 +122,7 @@ export default function Footer() {
 
       {/* Bottom bar */}
       <div className="border-t border-amber/10 py-6">
-        <div className="section-wrap flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-parchment/30 font-sans">
+        <div className="section-wrap flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-parchment/50 font-sans">
           <span>© {new Date().getFullYear()} Rev. Dokun Idowu. All rights reserved.</span>
           <span>Designed with purpose. Built for the Kingdom.</span>
         </div>

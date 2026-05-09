@@ -328,7 +328,7 @@ export default function FamilyPage() {
                   &ldquo;A man&apos;s ministry begins at home. The Idowu family is a living testimony of what God can do when a family is fully surrendered to His purpose.&rdquo;
                 </blockquote>
                 <cite className="text-[10px] tracking-[0.25em] uppercase text-amber font-sans font-semibold not-italic">
-                  &mdash; PDee · Rev. Dokun Idowu
+                  &mdash; Rev. Dokun Idowu (PDee)
                 </cite>
               </div>
               <div className="border border-amber/15 p-10 lg:p-12">
