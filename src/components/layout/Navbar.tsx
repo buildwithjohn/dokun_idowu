@@ -60,7 +60,7 @@ export default function Navbar() {
         {/* Right */}
         <div className="flex items-center gap-4">
           <div className="hidden lg:flex items-center gap-3 mr-1">
-            <a href="https://instagram.com/dokun_idowu" target="_blank" rel="noopener noreferrer" className="text-parchment/40 hover:text-amber transition-colors" aria-label="Instagram">
+            <a href="https://www.instagram.com/dokun_idowu/" target="_blank" rel="noopener noreferrer" className="text-parchment/40 hover:text-amber transition-colors" aria-label="Instagram">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
             </a>
             <a href="https://www.facebook.com/iamdokunidowu" target="_blank" rel="noopener noreferrer" className="text-parchment/40 hover:text-amber transition-colors" aria-label="Facebook">
@@ -69,8 +69,14 @@ export default function Navbar() {
             <a href="https://x.com/DokunIdowu" target="_blank" rel="noopener noreferrer" className="text-parchment/40 hover:text-amber transition-colors" aria-label="X">
               <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
             </a>
-            <a href="https://youtube.com/@RhemaNigeria" target="_blank" rel="noopener noreferrer" className="text-parchment/40 hover:text-red-500 transition-colors" aria-label="YouTube">
+            <a href="https://www.youtube.com/@dokunidowu" target="_blank" rel="noopener noreferrer" className="text-parchment/40 hover:text-red-500 transition-colors" aria-label="YouTube">
               <svg width="17" height="12" viewBox="0 0 24 17"><path d="M23.495 2.656a3.016 3.016 0 0 0-2.122-2.136C19.505 0 12 0 12 0S4.495 0 2.627.52A3.016 3.016 0 0 0 .505 2.656C0 4.537 0 8.455 0 8.455s0 3.918.505 5.799a3.016 3.016 0 0 0 2.122 2.136C4.495 17 12 17 12 17s7.505 0 9.373-.51a3.016 3.016 0 0 0 2.122-2.136C24 12.373 24 8.455 24 8.455s0-3.918-.505-5.799z" fill="#FF0000"/><path d="M9.545 12.023V4.886l6.273 3.569-6.273 3.568z" fill="white"/></svg>
+            </a>
+            <a href="https://www.tiktok.com/@pdee_dokunidowu" target="_blank" rel="noopener noreferrer" className="text-parchment/40 hover:text-amber transition-colors" aria-label="TikTok">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M16.5 0h-3.2v13.8a2.8 2.8 0 1 1-2.8-2.8c.2 0 .4 0 .6.05V7.8a6 6 0 1 0 5.4 6V6.4a7.3 7.3 0 0 0 4.1 1.3V4.4a4.1 4.1 0 0 1-2.9-1.2A4.1 4.1 0 0 1 16.5 0z"/></svg>
+            </a>
+            <a href="https://www.linkedin.com/in/dokun-idowu-84b8b41b4/" target="_blank" rel="noopener noreferrer" className="text-parchment/40 hover:text-amber transition-colors" aria-label="LinkedIn">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0z"/></svg>
             </a>
           </div>
           <Link href="/contact" className="hidden lg:inline-flex btn-primary text-xs py-3 px-6">Connect →</Link>
@@ -101,7 +107,7 @@ export default function Navbar() {
             </div>
             <Link href="/contact" className="btn-primary mt-3 w-full max-w-xs justify-center">Connect →</Link>
             <div className="flex gap-6 mt-1">
-              {[{href:"https://instagram.com/dokun_idowu",l:"IG"},{href:"https://www.facebook.com/iamdokunidowu",l:"FB"},{href:"https://x.com/DokunIdowu",l:"X"}].map(s => (
+              {[{href:"https://www.instagram.com/dokun_idowu/",l:"IG"},{href:"https://www.facebook.com/iamdokunidowu",l:"FB"},{href:"https://x.com/DokunIdowu",l:"X"},{href:"https://www.youtube.com/@dokunidowu",l:"YT"},{href:"https://www.tiktok.com/@pdee_dokunidowu",l:"TikTok"},{href:"https://www.linkedin.com/in/dokun-idowu-84b8b41b4/",l:"LinkedIn"}].map(s => (
                 <a key={s.l} href={s.href} target="_blank" rel="noopener noreferrer" className="text-[10px] tracking-widest uppercase text-parchment/40 hover:text-amber font-sans">{s.l}</a>
               ))}
             </div>

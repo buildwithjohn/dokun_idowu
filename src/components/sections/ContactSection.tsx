@@ -107,7 +107,7 @@ export default function ContactSection() {
                       {
                         label: "Instagram",
                         handle: "@dokun_idowu",
-                        href: "https://instagram.com/dokun_idowu",
+                        href: "https://www.instagram.com/dokun_idowu/",
                         icon: (
                           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
                             <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
@@ -138,12 +138,32 @@ export default function ContactSection() {
                       },
                       {
                         label: "YouTube",
-                        handle: "Rhema Nigeria",
-                        href: "https://youtube.com/@RhemaNigeria",
+                        handle: "@dokunidowu",
+                        href: "https://www.youtube.com/@dokunidowu",
                         icon: (
                           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
                             <path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 0 0-1.95 1.96A29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58A2.78 2.78 0 0 0 3.41 19.6C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.95A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z" />
                             <polygon points="9.75,15.02 15.5,12 9.75,8.98 9.75,15.02" fill="currentColor" stroke="none" />
+                          </svg>
+                        ),
+                      },
+                      {
+                        label: "TikTok",
+                        handle: "@pdee_dokunidowu",
+                        href: "https://www.tiktok.com/@pdee_dokunidowu",
+                        icon: (
+                          <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M16.5 0h-3.2v13.8a2.8 2.8 0 1 1-2.8-2.8c.2 0 .4 0 .6.05V7.8a6 6 0 1 0 5.4 6V6.4a7.3 7.3 0 0 0 4.1 1.3V4.4a4.1 4.1 0 0 1-2.9-1.2A4.1 4.1 0 0 1 16.5 0z" />
+                          </svg>
+                        ),
+                      },
+                      {
+                        label: "LinkedIn",
+                        handle: "Dokun Idowu",
+                        href: "https://www.linkedin.com/in/dokun-idowu-84b8b41b4/",
+                        icon: (
+                          <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0z" />
                           </svg>
                         ),
                       },

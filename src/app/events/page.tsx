@@ -186,7 +186,7 @@ export default function EventsPage() {
             </div>
             <p className="text-center text-umber/35 font-sans text-sm mt-14 italic">
               More events announced as they are confirmed. Follow{" "}
-              <a href="https://instagram.com/dokun_idowu" target="_blank" rel="noopener noreferrer" className="text-amber hover:underline">@dokun_idowu</a>{" "}
+              <a href="https://www.instagram.com/dokun_idowu/" target="_blank" rel="noopener noreferrer" className="text-amber hover:underline">@dokun_idowu</a>{" "}
               for updates.
             </p>
           </div>

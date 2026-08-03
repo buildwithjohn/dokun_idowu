@@ -348,9 +348,12 @@ export default function FamilyPage() {
                   </Link>
                   <div className="flex items-center gap-5 pt-4 mt-1 border-t border-amber/10">
                     {[
-                      { label: "Instagram", href: "https://instagram.com/dokun_idowu" },
+                      { label: "Instagram", href: "https://www.instagram.com/dokun_idowu/" },
                       { label: "Facebook",  href: "https://www.facebook.com/iamdokunidowu" },
                       { label: "X",         href: "https://x.com/DokunIdowu" },
+                      { label: "YouTube",   href: "https://www.youtube.com/@dokunidowu" },
+                      { label: "TikTok",    href: "https://www.tiktok.com/@pdee_dokunidowu" },
+                      { label: "LinkedIn",  href: "https://www.linkedin.com/in/dokun-idowu-84b8b41b4/" },
                     ].map((s) => (
                       <a key={s.label} href={s.href} target="_blank" rel="noopener noreferrer"
                         className="text-[9px] tracking-widest uppercase text-parchment/25 hover:text-amber font-sans transition-colors">

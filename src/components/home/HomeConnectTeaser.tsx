@@ -56,9 +56,12 @@ export default function HomeConnectTeaser() {
                 </Link>
                 <div className="flex items-center gap-4 sm:ml-2">
                   {[
-                    { href: "https://instagram.com/dokun_idowu", label: "IG" },
+                    { href: "https://www.instagram.com/dokun_idowu/", label: "IG" },
                     { href: "https://www.facebook.com/iamdokunidowu", label: "FB" },
                     { href: "https://x.com/DokunIdowu", label: "X" },
+                    { href: "https://www.youtube.com/@dokunidowu", label: "YT" },
+                    { href: "https://www.tiktok.com/@pdee_dokunidowu", label: "TikTok" },
+                    { href: "https://www.linkedin.com/in/dokun-idowu-84b8b41b4/", label: "LinkedIn" },
                   ].map((s) => (
                     <a key={s.label} href={s.href} target="_blank" rel="noopener noreferrer"
                       className="text-[10px] tracking-widest uppercase text-parchment/40 hover:text-parchment font-sans font-semibold transition-colors">
